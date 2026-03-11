@@ -1,0 +1,15 @@
+Local/uv: 10.23 GB
+Local/Programs: 9.87 GB
+Local/NVIDIA: 8.86 GB
+Local/Google: 7.63 GB
+LocalLow/Cygames: 5.58 GB
+Local/Autodesk: 5.27 GB
+Local/Microsoft: 4.05 GB
+Local/Android: 3.84 GB
+Local/Unity: 3.57 GB
+Roaming/Opera Software: 3.30 GB
+Local/com.autosubs: 3.25 GB
+Local/Temp: 2.58 GB
+Local/CapCut: 2.54 GB
+Local/CrashDumps: 2.08 GB
+LocalLow/NVIDIA: 1.65 GB
