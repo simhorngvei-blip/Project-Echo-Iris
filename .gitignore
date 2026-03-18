@@ -84,3 +84,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+# Local Database
+*.sqlite3
+backend/data/

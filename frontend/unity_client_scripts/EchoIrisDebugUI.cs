@@ -23,11 +23,8 @@ public class EchoIrisDebugUI : MonoBehaviour
     [Tooltip("The desktop roam state machine")]
     public DesktopRoamController roamController;
 
-    [Tooltip("The animation controller for tricks and emotes")]
-    public AvatarAnimationController animationController;
-
-    [Tooltip("The avatar action controller for expression testing")]
-    public AvatarActionController avatarActionController;
+    [Tooltip("The unified avatar controller for expressions, lip-sync, and animations")]
+    public EchoIrisAvatarController avatarController;
 
     // --- GUI State ---
     private string _chatInput = "Hello! How are you?";
@@ -223,7 +220,7 @@ public class EchoIrisDebugUI : MonoBehaviour
         GUILayout.Label("<b>4. Expression Tester</b>", GetStyleHeader());
 
         // Current emotion display
-        string currentEmotion = avatarActionController != null ? "Active" : "N/A (assign AvatarActionController)";
+        string currentEmotion = avatarController != null ? "Active" : "N/A (assign EchoIrisAvatarController)";
         GUILayout.Label($"<i>Click an emotion to preview it on the avatar:</i>", GetStyleItalic());
 
         // We have 12 emotions. Split them into 3 rows of 4 for a clean grid.
@@ -238,9 +235,9 @@ public class EchoIrisDebugUI : MonoBehaviour
                     string emotion = Emotions[index];
                     if (GUILayout.Button(emotion))
                     {
-                        if (avatarActionController != null)
+                        if (avatarController != null)
                         {
-                            avatarActionController.HandleEmotionReceived(emotion);
+                            avatarController.HandleEmotionReceived(emotion);
                             Debug.Log($"[DebugUI] Expression test: {emotion}");
                         }
                     }
@@ -273,7 +270,7 @@ public class EchoIrisDebugUI : MonoBehaviour
         }
         if (GUILayout.Button("Do Random Trick"))
         {
-            if (animationController != null) animationController.PlayRandomTrick();
+            if (avatarController != null) avatarController.PlayRandomTrick();
         }
         GUILayout.EndHorizontal();
 

@@ -15,11 +15,8 @@ public class EchoIrisManager : MonoBehaviour
     [Tooltip("Audio playback buffer (assign in inspector)")]
     public AudioPlaybackBuffer playbackBuffer;
 
-    [Tooltip("Lip-sync controller (assign in inspector)")]
-    public LipSyncController lipSync;
-
-    [Tooltip("Animation controller for tricks/emotes (assign in inspector)")]
-    public AvatarAnimationController animationController;
+    [Tooltip("Unified avatar controller (handles expressions, lip-sync, and animations)")]
+    public EchoIrisAvatarController avatarController;
 
     [Header("Debug")]
     public bool logToConsole = true;
@@ -167,9 +164,9 @@ public class EchoIrisManager : MonoBehaviour
     /// </summary>
     public void HandleAnimationCommand(string action, string param)
     {
-        if (animationController != null)
+        if (avatarController != null)
         {
-            animationController.HandleAnimationCommand(action, param);
+            avatarController.PlayTrick(param);
         }
     }
 
