@@ -23,14 +23,33 @@ Keep the file size under 5MB for fast loading.
 
 <br />
 
-<!-- 
-=======================================================================
-PLACEHOLDER: ARCHITECTURE DIAGRAM
-Replace the image source below with a diagram (e.g., Mermaid.js exported to PNG) 
-showing the flow between FastAPI, WebSockets, and Unity.
-======================================================================= 
--->
-![Project Echo-Iris Architecture](https://via.placeholder.com/800x300/1a1a1a/ffffff?text=+[+Architecture+Diagram+Placeholder+]+)
+## 🧩 Architecture Diagram
+```mermaid
+graph LR
+    subgraph "The Body (Unity Client)"
+        U[VRM Avatar]
+        W[WebSocket Manager]
+    end
+
+    subgraph "The Brain (FastAPI Server)"
+        F[Orchestrator]
+        S[Short-Term Memory]
+    end
+
+    subgraph "Local Services"
+        O((Ollama / Qwen))
+        C[(ChromaDB / LTM)]
+    end
+
+    W -- "1. User Message" --> F
+    F -- "2. Retrieve Context" --> C
+    C -- "3. Relevant Facts" --> F
+    F -- "4. Assemble Prompt" --> S
+    F -- "5. Run Inference" --> O
+    O -- "6. AI Thought" --> F
+    F -- "7. Audio + Expressions" --> W
+    W -- "8. Animate" --> U
+```
 
 </div>
 
