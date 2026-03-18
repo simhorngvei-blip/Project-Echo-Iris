@@ -88,3 +88,9 @@ crashlytics-build.properties
 # Local Database
 *.sqlite3
 backend/data/
+
+# Model Files
+*.pt
+*.vrm
+*.fbx
+backend/models/
