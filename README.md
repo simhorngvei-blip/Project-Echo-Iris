@@ -109,7 +109,7 @@ ollama pull llava
 
 The backend must be running before the Unity client can connect.
 
-1. **Open a terminal in the project root directory (`d:\Vtuber`).**
+1. **Open a terminal and navigate to the `backend` directory (`d:\Project Echo-Iris\backend`).**
 
 2. **Create and activate a Python virtual environment:**
    *(If you are using `uv`, replace `pip` with `uv pip` for much faster installs).*
@@ -143,7 +143,7 @@ The backend must be running before the Unity client can connect.
 
 1. **Open the project in Unity.**
 2. **Ensure your Scene is set up correctly:**
-   - Your VRM Avatar should have the `LipSyncController.cs`, `DesktopRoamController.cs`, and `AvatarAnimationController.cs` attached.
+   - Your VRM Avatar should have the `EchoIrisAvatarController.cs` and `DesktopRoamController.cs` attached.
    - You should have Manager GameObjects running `EchoIrisManager.cs`, `AudioPlaybackBuffer.cs`, `AudioWebSocketManager.cs`, and `VisionWebSocketManager.cs`.
 3. **Attach the Debug UI:**
    Ensure the `EchoIrisDebugUI.cs` script is attached to a GameObject in your scene and all its inspector slots are populated with the correct managers.
